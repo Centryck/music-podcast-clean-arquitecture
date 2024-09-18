@@ -1,0 +1,29 @@
+.episodeCardContainer {
+	display: flex;
+	flex-direction: column;
+	width: 600px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	padding-left: 16px;
+	padding-right: 16px;
+	border-radius: 6px;
+	box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.19);
+}
+
+.episodeCardTitle {
+	font-size: 20px;
+	font-weight: 500;
+}
+
+.episodeCardDescription {
+	font-size: smaller;
+	font-style: italic;
+	padding-top: 8px;
+	padding-bottom: 16px;
+	border-bottom: 1px solid #eee;
+}
+
+.episodeReproductor {
+	width: 100%;
+	padding-top: 16px;
+}

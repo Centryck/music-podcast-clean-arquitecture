@@ -1,0 +1,10 @@
+.Badge {
+	background-color: rgb(0, 108, 216);
+	width: 16px;
+	height: 16px;
+	border-radius: 8px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+}

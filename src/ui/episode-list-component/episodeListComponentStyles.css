@@ -1,0 +1,51 @@
+.episodeListContainer {
+	display: flex;
+	flex-direction: column;
+}
+
+.episodeListData {
+	padding: 12px;
+	box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.19);
+	max-height: 700px;
+	overflow: scroll;
+	overflow-x: hidden;
+	border-radius: 6px;
+}
+
+.episodesNumber {
+	box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.19);
+	margin-bottom: 16px;
+	padding: 12px;
+	border-radius: 6px;
+	font-weight: 600;
+	font-size: 18px;
+}
+
+.episodeItemContainer {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding: 8px;
+	border-bottom: 1px solid #eee;
+}
+
+.dataContainer {
+	width: 180px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.episodeTitle {
+  overflow: hidden;
+  max-width: 70%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+	color: rgb(0, 108, 216);
+	text-decoration: none;
+	outline: none;
+}
+
+.episodeListTitle {
+	max-width: 70%;
+}

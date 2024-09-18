@@ -4,12 +4,12 @@ export interface GetAllEpisodesParams {
   podcastId: number;
 }
 
-export interface GetSinglePodcastParams {
+export interface GetSingleEpisodeParams {
   podcastId: number;
   episodeId: number;
 }
 
 export interface EpisodeRepository {
   getAllEpisodes(params: GetAllEpisodesParams): Promise<Episode[]>;
-  getSingleEpisode(params: GetSinglePodcastParams): Promise<Episode[]>;
+  getSingleEpisode(params: GetSingleEpisodeParams): Promise<Episode[]>;
 }
