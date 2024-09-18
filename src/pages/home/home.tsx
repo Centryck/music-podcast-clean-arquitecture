@@ -18,7 +18,9 @@ const Home = () => {
   }, [podcasts]);
 
   const handleChangeFilterText = (text: string) => {
-    const filterText = text.toLowerCase();
+    const filterText = text
+      .toLowerCase()
+      .replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 
     const filterPodcast = podcasts?.filter(
       (podcast) =>

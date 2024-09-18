@@ -97,6 +97,18 @@ describe("Home Component", () => {
     expect(query.podcastByName("TYPESCRIPT PODCAST")).toBeNull();
   });
 
+  it("should handle special characters in filter text", async () => {
+    const { query } = renderElement();
+
+    // Filter by name with special characters
+    fireEvent.change(query.filterInput()!, { target: { value: "Rea*ct" } });
+
+    await waitFor(() => {
+      expect(query.podcastByName("REACT PODCAST")).toBeNull();
+    });
+    expect(query.podcastByName("TYPESCRIPT PODCAST")).toBeNull();
+  });
+
   it("should reset the filter and display all podcasts", async () => {
     const { query } = renderElement();
 
