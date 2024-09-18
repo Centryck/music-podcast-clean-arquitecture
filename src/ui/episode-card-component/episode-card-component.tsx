@@ -16,6 +16,7 @@ const EpisodeCardComponent: React.FC<EpisodeCardComponentProps> = ({
       <span
         dangerouslySetInnerHTML={{ __html: episode.description ?? "" }}
         className="episodeCardDescription"
+        data-testid={"episode-description"}
       />
 
       <audio controls className="episodeReproductor" data-testid="audio-player">

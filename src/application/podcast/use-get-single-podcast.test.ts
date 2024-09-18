@@ -35,10 +35,30 @@ describe("useGetSinglePodcast", () => {
     expect(result.current.error).toBeUndefined();
   });
 
+  it("should handle missing podcastId", () => {
+    const savedPodcast = {
+      podcast: { id: "1", title: "Some Podcast" },
+      date: new Date(),
+    };
+
+    mockStoredSinglePodcast.mockReturnValue({
+      getState: jest.fn(() => ({
+        podcast: savedPodcast,
+        setPodcast: jest.fn(),
+      })),
+    });
+
+    const { result } = renderHook(() => useGetSinglePodcast(""));
+
+    expect(result.current.isLoading).toBe(false);
+    expect(result.current.podcast).toBeUndefined();
+    expect(result.current.error).toBeUndefined();
+  });
+
   it("should fetch podcast if elapsedTime is greater than 1 day", async () => {
     const savedPodcast = {
       podcast: { id: "1", title: "Old Podcast" },
-      date: new Date(Date.now() - 48 * 60 * 60 * 1000), // 2 days ago
+      date: new Date(Date.now() - 48 * 60 * 60 * 1000),
     };
 
     const fetchedPodcast = { id: "2", title: "New Podcast" };
@@ -65,7 +85,7 @@ describe("useGetSinglePodcast", () => {
   it("should handle errors correctly", async () => {
     const savedPodcast = {
       podcast: { id: "1", title: "Old Podcast" },
-      date: new Date(Date.now() - 48 * 60 * 60 * 1000), // 2 days ago
+      date: new Date(Date.now() - 48 * 60 * 60 * 1000),
     };
 
     mockStoredSinglePodcast.mockReturnValue({

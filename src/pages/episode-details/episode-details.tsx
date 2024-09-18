@@ -18,7 +18,7 @@ const EpisodeDetails = () => {
   );
 
   return (
-    <div>
+    <div data-testid={"episode-details-page"}>
       <Header isLoading={isEpisodeLoading || isPodcastLoading} />
       <div className="episodeDetailsContainer">
         {podcast && (
